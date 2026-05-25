@@ -1,10 +1,10 @@
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
-const ParticlesBackground = () => {
+export default function ParticlesBackground() {
 
-  const particlesInit = async (main) => {
-    await loadFull(main);
+  const particlesInit = async (engine) => {
+    await loadSlim(engine);
   };
 
   return (
@@ -14,11 +14,11 @@ const ParticlesBackground = () => {
       options={{
         background: {
           color: {
-            value: "#ffffff",
+            value: "transparent",
           },
         },
 
-        fpsLimit: 120,
+        fpsLimit: 60,
 
         particles: {
           color: {
@@ -29,46 +29,28 @@ const ParticlesBackground = () => {
             color: "#ef4444",
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.3,
             width: 1,
           },
 
           move: {
-            direction: "none",
             enable: true,
-            outModes: {
-              default: "bounce",
-            },
-            random: false,
             speed: 1,
-            straight: false,
           },
 
           number: {
-            density: {
-              enable: true,
-            },
-            value: 45,
+            value: 40,
           },
 
           opacity: {
-            value: 0.3,
-          },
-
-          shape: {
-            type: "circle",
+            value: 0.4,
           },
 
           size: {
             value: { min: 1, max: 4 },
           },
         },
-
-        detectRetina: true,
       }}
-      className="fixed inset-0 -z-10"
     />
   );
-};
-
-export default ParticlesBackground;
+}
