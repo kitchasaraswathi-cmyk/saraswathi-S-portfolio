@@ -1,8 +1,24 @@
 import profile from './assets/profile.png'
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import ParticlesBackground from "./components/ParticlesBackground";
 export default function SaraswathiPortfolio() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden scroll-smooth">
+      <AnimatedCursor
+        innerSize={10}
+        outerSize={35}
+        color="239,68,68"
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={2}
+        clickables={[
+          'a',
+          'button',
+          '.link'
+        ]}
+      />
+       <ParticlesBackground />
       {/* Background Effects */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-red-200 rounded-full blur-3xl opacity-30 animate-pulse"></div>
@@ -40,65 +56,87 @@ export default function SaraswathiPortfolio() {
       </header>
 
       {/* Hero Section */}
-      <section
-        id="home"
-        className="min-h-screen flex items-center justify-center px-6 pt-32"
-      >
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}>
-          <div>
-            <p className="uppercase tracking-[0.3em] text-red-500 font-semibold mb-4">
-              Welcome to my portfolio
-            </p>
+<section
+  id="home"
+  className="min-h-screen flex items-center justify-center px-6 pt-32"
+>
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
-            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-slate-900">
-              Hi, I'm <br />
-              <span className="text-red-500">Saraswathi S</span>
-            </h1>
+    {/* LEFT CONTENT */}
+    <motion.div
+      initial={{ opacity: 0, x: -80 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <p className="uppercase tracking-[0.3em] text-red-500 font-semibold mb-4">
+        Welcome to my portfolio
+      </p>
 
-            <div className="text-2xl md:text-3xl font-semibold text-slate-700 mb-6">
-              Full-Stack Web Developer
-            </div>
+      <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-slate-900">
+        Hi, I'm <br />
+        <span className="text-red-500">Saraswathi S</span>
+      </h1>
 
-            <p className="text-lg leading-relaxed text-slate-600 max-w-2xl mb-10">
-              Enthusiastic B.Tech Information Technology student passionate
-              about full-stack web development, software engineering, and
-              building practical web-based solutions.
-            </p>
+      <TypeAnimation
+        sequence={[
+          "Full-Stack Web Developer",
+          2000,
+          "Python Flask Developer",
+          2000,
+          "Software Engineering Enthusiast",
+          2000,
+        ]}
+        wrapper="span"
+        speed={50}
+        repeat={Infinity}
+        className="text-2xl md:text-3xl font-semibold text-red-500 mb-6 block"
+      />
 
-            <div className="flex flex-wrap gap-5">
-              <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-red-400 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-red-300">
-                View Projects
-              </button>
+      <p className="text-lg leading-relaxed text-slate-600 max-w-2xl mb-10">
+        Enthusiastic B.Tech Information Technology student passionate
+        about full-stack web development, software engineering, and
+        building practical web-based solutions.
+      </p>
 
-              <button className="px-8 py-4 rounded-2xl border border-slate-300 bg-white/70 backdrop-blur-md font-semibold hover:scale-105 transition-all duration-300 hover:border-red-400">
-                Hire Me
-              </button>
+      <div className="flex flex-wrap gap-5">
+        <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-red-400 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-red-300">
+          View Projects
+        </button>
 
-              <button className="px-8 py-4 rounded-2xl bg-slate-900 text-white font-semibold hover:scale-105 transition-all duration-300">
-                Download Resume
-              </button>
-            </div>
-          </div>
+        <button className="px-8 py-4 rounded-2xl border border-slate-300 bg-white/70 backdrop-blur-md font-semibold hover:scale-105 transition-all duration-300 hover:border-red-400">
+          Hire Me
+        </button>
 
-          <motion.div className="relative flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}>
-            <div className="absolute w-96 h-96 rounded-full bg-red-200 blur-3xl opacity-50"></div>
+        <a
+           href="/resume.pdf"
+           download
+          className="px-8 py-4 rounded-2xl bg-slate-900 text-white font-semibold hover:scale-105 transition-all duration-300 inline-block"
+        >
+          Download Resume
+        </a>
+      </div>
+    </motion.div>
 
-            <div className="relative bg-white/40 backdrop-blur-2xl p-5 rounded-[40px] shadow-2xl border border-white/30 hover:scale-105 transition-all duration-500">
-              <img
-                src={profile}
-                alt="Saraswathi"
-                className="w-[420px] h-[520px] object-cover rounded-[30px] animate-[float_4s_ease-in-out_infinite]"
-              />
-            </div>
-          </motion.div>
-        </motion.div>
-      </section>
+    {/* RIGHT IMAGE */}
+    <motion.div
+      className="relative flex justify-center"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="absolute w-96 h-96 rounded-full bg-red-200 blur-3xl opacity-50"></div>
+
+      <div className="relative bg-white/40 backdrop-blur-2xl p-5 rounded-[40px] shadow-2xl border border-white/30 hover:scale-105 transition-all duration-500">
+        <img
+          src={profile}
+          alt="Saraswathi"
+          className="w-[420px] h-[520px] object-cover rounded-[30px] animate-[float_4s_ease-in-out_infinite]"
+        />
+      </div>
+    </motion.div>
+
+  </div>
+</section>
 
       {/* About */}
       <section id="about" className="py-28 px-6">
