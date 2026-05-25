@@ -1,12 +1,12 @@
 import profile from './assets/profile.png'
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import CustomCursor from "./components/CustomCursor";
-import ParticlesBackground from "./components/ParticlesBackground";
+import CustomCursor from './components/CustomCursor';
+import ParticlesBackground from './components/ParticlesBackground';
 export default function SaraswathiPortfolio() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden scroll-smooth">
-      <CustomCursor />
+       <CustomCursor />
        <ParticlesBackground />
       {/* Background Effects */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
