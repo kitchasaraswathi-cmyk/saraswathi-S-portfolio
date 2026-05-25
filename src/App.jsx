@@ -1,6 +1,7 @@
 import profile from './assets/profile.png'
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import AnimatedCursor from "react-animated-cursor";
 import ParticlesBackground from "./components/ParticlesBackground";
 export default function SaraswathiPortfolio() {
   return (
