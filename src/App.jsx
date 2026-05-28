@@ -3,7 +3,32 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import CustomCursor from './components/CustomCursor';
 import ParticlesBackground from './components/ParticlesBackground';
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 export default function SaraswathiPortfolio() {
+  const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+
+       emailjs
+        .sendForm(
+        "service_vum2vr9",
+        "template_f7gco9o",
+        form.current,
+        "temMGCbv8cCquuhRg"
+        )
+        .then(
+        () => {
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message");
+         }
+        );
+    };
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden scroll-smooth">
        <CustomCursor />
@@ -485,36 +510,49 @@ export default function SaraswathiPortfolio() {
           </div>
 
           <div className="bg-white p-10 rounded-[30px] shadow-2xl">
-            <form className="space-y-6">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="space-y-6"
+             >
               <div>
                 <label className="block mb-2 font-medium">Full Name</label>
                 <input
+                  name="name"
                   type="text"
                   placeholder="Enter your name"
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-red-400"
+                  required
                 />
               </div>
 
               <div>
                 <label className="block mb-2 font-medium">Email</label>
                 <input
+                  name="email"
                   type="email"
                   placeholder="Enter your email"
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-red-400"
+                  required
                 />
               </div>
 
               <div>
                 <label className="block mb-2 font-medium">Message</label>
                 <textarea
+                  name="message"
                   rows="6"
                   placeholder="Write your message"
                   className="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-red-400"
+                  required
                 ></textarea>
               </div>
 
-              <button className="w-full py-4 rounded-2xl bg-gradient-to-r from-red-500 to-orange-400 text-white font-semibold text-lg hover:scale-105 transition-all duration-300">
-                Send Message
+              <button
+                type="submit"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-red-500 to-orange-400 text-white font-semibold text-lg hover:scale-105 transition-all duration-300"
+              >
+               Send Message
               </button>
             </form>
           </div>
