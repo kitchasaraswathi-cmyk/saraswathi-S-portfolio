@@ -98,6 +98,13 @@ export default function SaraswathiPortfolio() {
 
         <a
            href="/resume.pdf"
+           target="_blank" rel="noreferrer"
+          className="px-8 py-4 rounded-2xl bg-slate-900 text-white font-semibold hover:scale-105 transition-all duration-300 inline-block"
+        >
+          View Resume
+        </a>
+        <a
+           href="/resume.pdf"
            download
           className="px-8 py-4 rounded-2xl bg-slate-900 text-white font-semibold hover:scale-105 transition-all duration-300 inline-block"
         >
