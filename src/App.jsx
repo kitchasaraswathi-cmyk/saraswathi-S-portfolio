@@ -499,8 +499,8 @@ export default function SaraswathiPortfolio() {
                     ))}
                   </ul>
 
-                  <button className="w-full py-4 rounded-2xl bg-slate-900 text-white font-semibold hover:bg-red-500 transition-all duration-300">
-                    View Details
+                  <button className="w-full py-4 rounded-2xl bg-slate-900 text-white font-semibold ">
+                    Project In Progress
                   </button>
                 </div>
               </div>
