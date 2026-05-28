@@ -312,44 +312,78 @@ export default function SaraswathiPortfolio() {
       {/* Services */}
       <section id="services" className="py-28 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-red-500 uppercase tracking-[0.3em] font-semibold mb-4">
-              Services
-            </p>
-            <h2 className="text-5xl font-bold">What I Can Do</h2>
+    
+         <div className="text-center mb-16">
+           <p className="text-red-500 uppercase tracking-[0.3em] font-semibold mb-4">
+           Services
+           </p>
+
+          <h2 className="text-5xl font-bold">
+          What I Can Do
+          </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
             {[
-              'Full-Stack Web Development',
-              'Backend Development using Flask',
-              'Database Design & Management',
-              'Dynamic Web Application Development',
-              'Inventory & Billing Solutions',
-              'Management System Development',
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="group bg-white/60 backdrop-blur-xl p-8 rounded-3xl shadow-xl border border-slate-100 hover:-translate-y-4 transition-all duration-500"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center text-red-500 text-3xl mb-6 group-hover:scale-110 transition-all duration-300">
-                  ✦
-                </div>
+             {
+               title: "Full-Stack Web Development",
+               desc: "Responsive and scalable full-stack web applications using modern frontend and backend technologies.",
+             },
 
-                <h3 className="text-2xl font-bold mb-4 text-slate-900">
-                  {service}
-                </h3>
+             {
+               title: "Backend Development using Flask",
+               desc: "Secure backend systems, REST APIs, authentication, and server-side logic using Python Flask.",
+             },
 
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Modern, scalable, and responsive solutions built with clean
-                  UI and strong backend architecture.
-                </p>
+             {
+               title: "Database Design & Management",
+               desc: "Efficient MySQL database architecture, CRUD operations, optimization, and data handling solutions.",
+              },
+ 
+             {
+               title: "Dynamic Web Application Development",
+               desc: "Interactive and user-friendly web applications with real-time functionality and smooth UI experience.",
+             },
 
-                <button className="px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-red-500 transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
-            ))}
+             {
+               title: "Inventory & Billing Solutions",
+               desc: "Custom inventory management, billing systems, stock tracking, and sales monitoring applications.",
+             },
+
+             {
+               title: "Management System Development",
+               desc: "Smart management systems for colleges, stores, attendance, and business workflow automation.",
+             },
+           ].map((service, index) => (
+
+          <div
+            key={index}
+            className="group bg-white/60 backdrop-blur-xl p-8 rounded-3xl shadow-xl border border-slate-100 hover:-translate-y-4 transition-all duration-500"
+          >
+
+          <div className="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center text-red-500 text-3xl mb-6 group-hover:scale-110 transition-all duration-300">
+            ✦
+          </div>
+
+          <h3 className="text-2xl font-bold mb-4 text-slate-900">
+            {service.title}
+          </h3>
+
+          <p className="text-slate-600 leading-relaxed mb-6">
+            {service.desc}
+          </p>
+
+          <a
+            href="#contact"
+            className="inline-block px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-red-500 transition-all duration-300"
+          >
+            Get Started
+          </a>
+
+         </div>
+
+          ))}
           </div>
         </div>
       </section>
