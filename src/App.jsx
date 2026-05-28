@@ -487,8 +487,19 @@ export default function SaraswathiPortfolio() {
             <div className="space-y-6 text-lg">
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <h3 className="font-bold mb-2">Phone</h3>
-                <p>9047750953</p>
-                <p>7092356324</p>
+                <a
+                  href="tel:+919047750953"
+                  className="block text-red-500 hover:underline"
+                >
+                  +91 9047750953
+                </a>
+
+                <a
+                  href="tel:+917092356324"
+                  className="block text-red-500 hover:underline"
+                >
+                  +91 7092356324
+                </a>
               </div>
 
               <div className="bg-white p-6 rounded-2xl shadow-lg">
@@ -505,12 +516,26 @@ export default function SaraswathiPortfolio() {
 
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <h3 className="font-bold mb-2">GitHub</h3>
-                <p>github.com/kitchasaraswathi-cmyk</p>
+                <a
+                  href="https://github.com/kitchasaraswathi-cmyk"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-red-500 hover:underline"
+                >
+                  github.com/kitchasaraswathi-cmyk
+                </a>
               </div>
 
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <h3 className="font-bold mb-2">LinkedIn</h3>
-                <p>linkedin.com/in/saraswathi-s-88681a2a3</p>
+                <a
+                  href="https://linkedin.com/in/saraswathi-s-88681a2a3"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-red-500 hover:underline"
+                >
+                 linkedin.com/in/saraswathi-s-88681a2a3
+                </a>
               </div>
             </div>
           </div>
