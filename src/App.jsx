@@ -113,13 +113,19 @@ export default function SaraswathiPortfolio() {
       </p>
 
       <div className="flex flex-wrap gap-5">
-        <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-red-400 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-red-300">
+        <a
+          href="#projects"
+          className="px-8 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-red-400 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-red-300 inline-block"
+        >
           View Projects
-        </button>
+        </a>
 
-        <button className="px-8 py-4 rounded-2xl border border-slate-300 bg-white/70 backdrop-blur-md font-semibold hover:scale-105 transition-all duration-300 hover:border-red-400">
+        <a
+          href="#contact"
+          className="px-8 py-4 rounded-2xl border border-slate-300 bg-white/70 backdrop-blur-md font-semibold hover:scale-105 transition-all duration-300 hover:border-red-400 inline-block"
+        >
           Hire Me
-        </button>
+        </a>
 
         <a
            href="/resume.pdf"
