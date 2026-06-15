@@ -408,7 +408,7 @@ export default function SaraswathiPortfolio() {
               <p className="text-red-500 font-semibold text-lg mb-2">
                 ThinkInfo Expert Solutions
               </p>
-              <p className="text-slate-500 mb-6">Duration: Two Weeks</p>
+              <p className="text-slate-500 mb-6">Duration: December-2025</p>
 
               <ul className="space-y-3 text-slate-600 text-lg">
                 <li>• Developed dynamic web applications</li>
@@ -418,6 +418,27 @@ export default function SaraswathiPortfolio() {
                 <li>• Responsive web application development</li>
               </ul>
             </div>
+            <div className="bg-white p-10 rounded-3xl shadow-xl">
+              <h3 className="text-3xl font-bold mb-2">
+                Intern – Data Structures and Algorithms (Python)
+              </h3>
+
+              <p className="text-red-500 font-semibold text-lg mb-2">
+                 ETS Academy
+              </p>
+
+                <p className="text-slate-500 mb-6">
+                Duration: June 2026 – Present
+                </p>
+
+              <ul className="space-y-3 text-slate-600 text-lg">
+                <li>• Intensive training in Data Structures and Algorithms using Python</li>
+                <li>• Practicing problem-solving and algorithmic thinking through coding challenges</li>
+                <li>• Learned core data structures: Arrays, Strings, Linked Lists, Stacks, Queues, Trees</li>
+                <li>• Implementing recursion, sorting, searching, and optimization techniques</li>
+                <li>• Analyzing time complexity and improving coding efficiency</li>
+                </ul>
+                </div>
           </div>
         </div>
       </section>
