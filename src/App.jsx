@@ -236,7 +236,7 @@ export default function SaraswathiPortfolio() {
             {[
               ['10+', 'Projects Completed'],
               ['15+', 'Technologies Learned'],
-              ['1', 'Internship Experience'],
+              ['2', 'Internship Experience'],
               ['94.2%', 'Academic Score'],
             ].map((item, index) => (
               <div
