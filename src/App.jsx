@@ -208,11 +208,13 @@ export default function SaraswathiPortfolio() {
                   title: 'HSC',
                   place: 'Government Higher Secondary School',
                   year: 'Graduated: 2022',
+                  score: '82%',
                 },
                 {
                   title: 'SSLC',
                   place: 'Government Higher Secondary School',
                   year: 'Graduated: 2020',
+                  score: '93.6%'
                 },
               ].map((edu, index) => (
                 <div
@@ -467,6 +469,7 @@ export default function SaraswathiPortfolio() {
               },
               {
                 title: 'Smart Student Attendance Management System',
+                github: 'https://github.com/kitchasaraswathi-cmyk/smart_attendance.git'
                 features: [
                   'Online attendance',
                   'Parent notifications',
