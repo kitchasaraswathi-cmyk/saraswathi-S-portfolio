@@ -469,7 +469,7 @@ export default function SaraswathiPortfolio() {
               },
               {
                 title: 'Smart Student Attendance Management System',
-                github: 'https://github.com/kitchasaraswathi-cmyk/smart_attendance.git'
+                github: 'https://github.com/kitchasaraswathi-cmyk/smart_attendance.git',
                 features: [
                   'Online attendance',
                   'Parent notifications',
