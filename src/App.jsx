@@ -1,4 +1,4 @@
-import profile from './assets/profile.png'
+import profile from './assets/profile.jpeg';
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import CustomCursor from './components/CustomCursor';
@@ -430,7 +430,7 @@ export default function SaraswathiPortfolio() {
               </p>
 
                 <p className="text-slate-500 mb-6">
-                Duration: June 2026 – Present
+                Duration: June-2026 
                 </p>
 
               <ul className="space-y-3 text-slate-600 text-lg">
@@ -470,6 +470,7 @@ export default function SaraswathiPortfolio() {
               {
                 title: 'Smart Student Attendance Management System',
                 github: 'https://github.com/kitchasaraswathi-cmyk/smart_attendance.git',
+                status: 'completed',
                 features: [
                   'Online attendance',
                   'Parent notifications',
@@ -523,9 +524,20 @@ export default function SaraswathiPortfolio() {
                     ))}
                   </ul>
 
-                  <button className="w-full py-4 rounded-2xl bg-slate-900 text-white font-semibold ">
-                    Project In Progress
-                  </button>
+                  {project.status === 'completed' ? (
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block w-full py-4 rounded-2xl bg-green-600 text-white font-semibold text-center hover:bg-green-700 transition"
+  >
+    View Project on GitHub
+  </a>
+) : (
+  <button className="w-full py-4 rounded-2xl bg-slate-900 text-white font-semibold">
+    Project In Progress
+  </button>
+)}
                 </div>
               </div>
             ))}
