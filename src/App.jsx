@@ -287,58 +287,70 @@ export default function SaraswathiPortfolio() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="py-28 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-red-500 uppercase tracking-[0.3em] font-semibold mb-4">
-              Skills
-            </p>
-            <h2 className="text-5xl font-bold">Technical Expertise</h2>
-          </div>
+      
+<section id="skills" className="py-28 px-6 bg-slate-50">
+  <div className="max-w-7xl mx-auto">
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-  {
-    title: 'Data Analytics',
-    skills: ['Excel', 'Data Cleaning', 'Data Analysis'],
-  },
-  {
-    title: 'Database Management',
-    skills: ['SQL', 'MySQL', 'CRUD Operations'],
-  },
-  {
-    title: 'Data Visualization',
-    skills: ['Power BI', 'Dashboards', 'Data Reporting'],
-  },
-  {
-    title: 'Technical Skills',
-    skills: ['Python', 'AI Tools', 'Cloud Computing', 'Problem Solving'],
-  },
-].map((category, index) => (
+    <div className="text-center mb-16">
+      <p className="text-red-500 uppercase tracking-[0.3em] font-semibold mb-4">
+        Skills
+      </p>
+      <h2 className="text-5xl font-bold">
+        Technical Expertise
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      {[
+        {
+          title: 'Data Analytics',
+          skills: ['Excel', 'Data Cleaning', 'Data Analysis'],
+        },
+        {
+          title: 'Database Management',
+          skills: ['SQL', 'MySQL', 'CRUD Operations'],
+        },
+        {
+          title: 'Data Visualization',
+          skills: ['Power BI', 'Dashboards', 'Data Reporting'],
+        },
+        {
+          title: 'Technical Skills',
+          skills: ['Python', 'AI Tools', 'Cloud Computing', 'Problem Solving'],
+        },
+      ].map((category, index) => (
+
+        <div
+          key={index}
+          className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-3 transition-all duration-300 border border-slate-100"
+        >
+
+          <h3 className="text-2xl font-bold mb-6 text-slate-900">
+            {category.title}
+          </h3>
+
+          <div className="space-y-4">
+            {category.skills.map((skill) => (
               <div
-                key={index}
-                className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-3 transition-all duration-300 border border-slate-100"
+                key={skill}
+                className="py-3 border-b border-slate-100 last:border-0"
               >
-                <h3 className="text-2xl font-bold mb-6 text-slate-900">
-                  {category.title}
-                </h3>
-
-                <div className="space-y-4">
-                  {category.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3 last:border-0"
-                    >
-                      <span className="font-medium text-slate-700">{skill.name}</span>
-                      <span className="text-sm text-red-500 text-right">{skill.level}</span>
-                    </div>
-                  ))}
-                </div>
+                <span className="font-medium text-slate-700">
+                  {skill}
+                </span>
               </div>
             ))}
           </div>
+
         </div>
-      </section>
+
+      ))}
+
+    </div>
+  </div>
+</section>
+
 
       {/* Areas of Interest */}
       <section id="areas-of-interest" className="py-28 px-6">
