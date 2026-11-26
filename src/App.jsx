@@ -300,35 +300,19 @@ export default function SaraswathiPortfolio() {
             {[
   {
     title: 'Data Analytics',
-    skills: [
-      { name: 'Excel', level: 'Beginner' },
-      { name: 'Data Analysis', level: 'Learning' },
-      { name: 'Data Cleaning', level: 'Learning' },
-    ],
+    skills: ['Excel', 'Data Cleaning', 'Data Analysis'],
   },
   {
     title: 'Database Management',
-    skills: [
-      { name: 'SQL', level: 'Basic Knowledge' },
-      { name: 'MySQL', level: 'Foundational' },
-      { name: 'CRUD Operations', level: 'Practical Experience' },
-    ],
+    skills: ['SQL', 'MySQL', 'CRUD Operations'],
   },
   {
     title: 'Data Visualization',
-    skills: [
-      { name: 'Power BI', level: 'Currently Learning' },
-      { name: 'Dashboards', level: 'Learning' },
-      { name: 'Reporting', level: 'Learning' },
-    ],
+    skills: ['Power BI', 'Dashboards', 'Data Reporting'],
   },
   {
     title: 'Technical Skills',
-    skills: [
-      { name: 'Python', level: 'Foundational' },
-      { name: 'AI Tools', level: 'Exploring' },
-      { name: 'Cloud Computing', level: 'Conceptual Knowledge' },
-    ],
+    skills: ['Python', 'AI Tools', 'Cloud Computing', 'Problem Solving'],
   },
 ].map((category, index) => (
               <div
