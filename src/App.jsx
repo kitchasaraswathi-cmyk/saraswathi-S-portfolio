@@ -4,9 +4,10 @@ import { TypeAnimation } from "react-type-animation";
 import CustomCursor from './components/CustomCursor';
 import ParticlesBackground from './components/ParticlesBackground';
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 export default function SaraswathiPortfolio() {
   const form = useRef();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const sendEmail = (e) => {
       e.preventDefault();
@@ -24,8 +25,8 @@ export default function SaraswathiPortfolio() {
           form.current.reset();
         },
         (error) => {
-          console.log(error.text);
-          alert("Failed to send message");
+          console.error("EmailJS error:", error);
+          alert("Message could not be sent. Please try again or contact me by email.");
          }
         );
     };
@@ -51,14 +52,14 @@ export default function SaraswathiPortfolio() {
               'Home',
               'About',
               'Skills',
-              'Services',
+              'Areas of Interest',
               'Projects',
               'Experience',
               'Contact',
             ].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item.toLowerCase().replaceAll(' ', '-')}`}
                 className="relative group transition-all duration-300"
               >
                 {item}
@@ -66,7 +67,40 @@ export default function SaraswathiPortfolio() {
               </a>
             ))}
           </nav>
+
+          <button
+            type="button"
+            className="md:hidden rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold"
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            {isMenuOpen ? 'Close' : 'Menu'}
+          </button>
         </div>
+
+        {isMenuOpen && (
+          <nav className="md:hidden border-t border-slate-200 bg-white/95 px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+            {[
+              'Home',
+              'About',
+              'Skills',
+              'Areas of Interest',
+              'Projects',
+              'Experience',
+              'Contact',
+            ].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase().replaceAll(' ', '-')}`}
+                onClick={() => setIsMenuOpen(false)}
+                className="py-1"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -93,12 +127,14 @@ export default function SaraswathiPortfolio() {
 
       <TypeAnimation
         sequence={[
-          "Full-Stack Web Developer",
-          2000,
-          "Python Flask Developer",
-          2000,
-          "Software Engineering Enthusiast",
-          2000,
+          "Data Analyst",
+  2000,
+  "Business Intelligence Analyst",
+  2000,
+  "Data & AI Enthusiast",
+  2000,
+  "SQL & Power BI Learner",
+  2000
         ]}
         wrapper="span"
         speed={50}
@@ -107,9 +143,7 @@ export default function SaraswathiPortfolio() {
       />
 
       <p className="text-lg leading-relaxed text-slate-600 max-w-2xl mb-10">
-        Enthusiastic B.Tech Information Technology student passionate
-        about full-stack web development, software engineering, and
-        building practical web-based solutions.
+        Enthusiastic B.Tech Information Technology student passionate about Data Analytics, business intelligence, and data-driven decision-making. Skilled in analytical thinking and eager to develop expertise in Excel, SQL, Power BI, and AI tools to transform raw data into meaningful insights and practical business solutions.
       </p>
 
       <div className="flex flex-wrap gap-5">
@@ -173,21 +207,18 @@ export default function SaraswathiPortfolio() {
               About Me
             </p>
             <h2 className="text-5xl font-bold text-slate-900">
-              Passionate About Building Modern Web Solutions
+              Passionate About Turning Data into Meaningful Insights
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
               <p>
-                I am a B.Tech Information Technology student with strong
-                interest in full-stack web development, backend engineering,
-                database management, and software design.
+                I am a B.Tech Information Technology student with a strong interest in Data Analytics, Business Intelligence, database management, and data-driven decision-making. I am passionate about transforming raw data into meaningful insights using tools like Excel, SQL, Power BI, and AI technologies while continuously developing my analytical and problem-solving skills.
               </p>
 
               <p>
-                I enjoy creating modern web applications that solve real-world
-                problems and improve user experiences.
+                I enjoy analyzing data, finding useful insights, and solving real-world problems through data-driven solutions.
               </p>
 
               <p>
@@ -202,7 +233,7 @@ export default function SaraswathiPortfolio() {
                   title: 'B.Tech Information Technology',
                   place: 'The Kavery Engineering College, Salem',
                   year: 'Expected Graduation: 2027',
-                  score: 'Current Score: 94.2%',
+                  score: 'Current Score: 94.3%',
                 },
                 {
                   title: 'HSC',
@@ -236,10 +267,10 @@ export default function SaraswathiPortfolio() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
             {[
-              ['10+', 'Projects Completed'],
-              ['15+', 'Technologies Learned'],
-              ['2', 'Internship Experience'],
-              ['94.2%', 'Academic Score'],
+              ['3', 'Featured Projects'],
+              ['2', 'Internship Experiences'],
+              ['2027', 'Expected Graduation'],
+              ['94.3%', 'Academic Score'],
             ].map((item, index) => (
               <div
                 key={index}
@@ -267,23 +298,39 @@ export default function SaraswathiPortfolio() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                title: 'Frontend Development',
-                skills: ['HTML', 'CSS', 'JavaScript'],
-              },
-              {
-                title: 'Backend Development',
-                skills: ['Python', 'Flask', 'API Development'],
-              },
-              {
-                title: 'Database Management',
-                skills: ['MySQL', 'CRUD Operations'],
-              },
-              {
-                title: 'Software Development',
-                skills: ['Problem Solving', 'Full-Stack Development'],
-              },
-            ].map((category, index) => (
+  {
+    title: 'Data Analytics',
+    skills: [
+      { name: 'Excel', level: 'Beginner' },
+      { name: 'Data Cleaning', level: 'Learning' },
+      { name: 'Data Analysis', level: 'Developing' },
+    ],
+  },
+  {
+    title: 'Database Management',
+    skills: [
+      { name: 'SQL', level: 'Basic SELECT queries' },
+      { name: 'MySQL', level: 'Foundational' },
+      { name: 'CRUD Operations', level: 'Internship experience' },
+    ],
+  },
+  {
+    title: 'Data Visualization',
+    skills: [
+      { name: 'Power BI', level: 'Not started' },
+      { name: 'Dashboards', level: 'Learning' },
+      { name: 'Reporting', level: 'Learning' },
+    ],
+  },
+  {
+    title: 'Technical Skills',
+    skills: [
+      { name: 'Python', level: 'Foundational' },
+      { name: 'AI Tools', level: 'Exploring' },
+      { name: 'Problem Solving', level: 'Developing' },
+    ],
+  },
+].map((category, index) => (
               <div
                 key={index}
                 className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-3 transition-all duration-300 border border-slate-100"
@@ -292,16 +339,14 @@ export default function SaraswathiPortfolio() {
                   {category.title}
                 </h3>
 
-                <div className="space-y-5">
-                  {category.skills.map((skill, idx) => (
-                    <div key={idx}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium">{skill}</span>
-                        <span className="text-red-500">90%</span>
-                      </div>
-                      <div className="w-full h-3 rounded-full bg-slate-200 overflow-hidden">
-                        <div className="h-full rounded-full bg-gradient-to-r from-red-500 to-orange-400 w-[90%]"></div>
-                      </div>
+                <div className="space-y-4">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="flex items-center justify-between gap-3 border-b border-slate-100 pb-3 last:border-0"
+                    >
+                      <span className="font-medium text-slate-700">{skill.name}</span>
+                      <span className="text-sm text-red-500 text-right">{skill.level}</span>
                     </div>
                   ))}
                 </div>
@@ -311,13 +356,13 @@ export default function SaraswathiPortfolio() {
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="py-28 px-6">
+      {/* Areas of Interest */}
+      <section id="areas-of-interest" className="py-28 px-6">
         <div className="max-w-7xl mx-auto">
     
          <div className="text-center mb-16">
            <p className="text-red-500 uppercase tracking-[0.3em] font-semibold mb-4">
-           Services
+          Areas of Interest
            </p>
 
           <h2 className="text-5xl font-bold">
@@ -328,36 +373,36 @@ export default function SaraswathiPortfolio() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             {[
-             {
-               title: "Full-Stack Web Development",
-               desc: "Responsive and scalable full-stack web applications using modern frontend and backend technologies.",
-             },
+  {
+    title: "Data Analysis",
+    desc: "Analyzing data, identifying patterns, and generating meaningful insights to support better decisions.",
+  },
 
-             {
-               title: "Backend Development using Flask",
-               desc: "Secure backend systems, REST APIs, authentication, and server-side logic using Python Flask.",
-             },
+  {
+    title: "Excel Data Management",
+    desc: "Organizing, cleaning, and managing datasets using Excel formulas, functions, and spreadsheets.",
+  },
 
-             {
-               title: "Database Design & Management",
-               desc: "Efficient MySQL database architecture, CRUD operations, optimization, and data handling solutions.",
-              },
- 
-             {
-               title: "Dynamic Web Application Development",
-               desc: "Interactive and user-friendly web applications with real-time functionality and smooth UI experience.",
-             },
+  {
+    title: "SQL & Database Management",
+    desc: "Managing databases, writing SQL queries, retrieving information, and handling structured data.",
+  },
 
-             {
-               title: "Inventory & Billing Solutions",
-               desc: "Custom inventory management, billing systems, stock tracking, and sales monitoring applications.",
-             },
+  {
+    title: "Power BI & Data Visualization",
+    desc: "Creating interactive dashboards, visual reports, and presenting data in an understandable way.",
+  },
 
-             {
-               title: "Management System Development",
-               desc: "Smart management systems for colleges, stores, attendance, and business workflow automation.",
-             },
-           ].map((service, index) => (
+  {
+    title: "Business Intelligence",
+    desc: "Converting business data into useful reports and insights to support informed decisions.",
+  },
+
+  {
+    title: "AI-Powered Data Solutions",
+    desc: "Exploring AI tools to simplify data analysis, improve productivity, and solve practical problems.",
+  },
+].map((service, index) => (
 
           <div
             key={index}
@@ -365,7 +410,7 @@ export default function SaraswathiPortfolio() {
           >
 
           <div className="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center text-red-500 text-3xl mb-6 group-hover:scale-110 transition-all duration-300">
-            ✦
+            
           </div>
 
           <h3 className="text-2xl font-bold mb-4 text-slate-900">
@@ -507,16 +552,11 @@ export default function SaraswathiPortfolio() {
                     {project.title}
                   </h3>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {['Flask', 'MySQL', 'JavaScript'].map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-4 py-2 rounded-full bg-red-100 text-red-500 text-sm font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  {project.github && (
+                    <p className="text-sm text-slate-500 mb-6">
+                      Source code is available on GitHub.
+                    </p>
+                  )}
 
                   <ul className="space-y-2 text-slate-600 mb-6">
                     {project.features.map((feature, idx) => (
@@ -668,7 +708,7 @@ export default function SaraswathiPortfolio() {
               SS<span className="text-red-500">.</span>
             </h2>
             <p className="text-slate-400 mt-2">
-              Full-Stack Developer & Software Engineering Enthusiast
+              Data Analyst | Business Intelligence Enthusiast
             </p>
           </div>
 
