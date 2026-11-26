@@ -302,22 +302,22 @@ export default function SaraswathiPortfolio() {
     title: 'Data Analytics',
     skills: [
       { name: 'Excel', level: 'Beginner' },
+      { name: 'Data Analysis', level: 'Learning' },
       { name: 'Data Cleaning', level: 'Learning' },
-      { name: 'Data Analysis', level: 'Developing' },
     ],
   },
   {
     title: 'Database Management',
     skills: [
-      { name: 'SQL', level: 'Basic SELECT queries' },
+      { name: 'SQL', level: 'Basic Knowledge' },
       { name: 'MySQL', level: 'Foundational' },
-      { name: 'CRUD Operations', level: 'Internship experience' },
+      { name: 'CRUD Operations', level: 'Practical Experience' },
     ],
   },
   {
     title: 'Data Visualization',
     skills: [
-      { name: 'Power BI', level: 'Not started' },
+      { name: 'Power BI', level: 'Currently Learning' },
       { name: 'Dashboards', level: 'Learning' },
       { name: 'Reporting', level: 'Learning' },
     ],
@@ -327,7 +327,7 @@ export default function SaraswathiPortfolio() {
     skills: [
       { name: 'Python', level: 'Foundational' },
       { name: 'AI Tools', level: 'Exploring' },
-      { name: 'Problem Solving', level: 'Developing' },
+      { name: 'Cloud Computing', level: 'Conceptual Knowledge' },
     ],
   },
 ].map((category, index) => (
